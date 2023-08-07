@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model invoice {
+  id    Int     @id @default(autoincrement())
+  idCliente  Decimal
+  referenceMonth String  
+  dueDate DateTime  
+  energyElectricKwh Decimal  
+  energyElectricPrice Decimal  
+  energyElectricValue Decimal  
+  energyInjectedKwh Decimal  
+  energyInjectedPrice Decimal  
+  energyInjectedValue Decimal  
+  energyIcmsKwh Decimal  
+  energyIcmsPrice Decimal  
+  energyIcmsValue Decimal  
+  contribution Decimal  
+  amount Decimal  
+}

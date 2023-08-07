@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start:frontend": "cd frontend && npm i && npm run dev",
+    "start:backend": "cd backend && npm i && docker-compose up -d && npx prisma migrate dev --name invoice  && npm run dev",
+    "start:both": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
